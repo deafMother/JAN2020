@@ -1,0 +1,103 @@
+// there is an issue witn npx create-react-app .
+// some useful dependencies
+/*
+
+npm i axios react react-cookie react-dom react-redux react-router-dom redux redux-form redux-saga moment lodash
+
+*/
+
+// use below method
+
+if you use npm 5.1 or earlier, you can't use npx. Instead, install create-react-app globally:
+
+npm install -g create-react-app
+Now you can run:
+
+create-react-app my-app
+
+//    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+
+
+// to enable css modules
+
+step 1> create-react-app  app-name --scripts-version 1.1.5
+step 2> npm run eject
+step 3> in  the following file add the codes config->webpack.config.dev.js 
+		
+	 test: /\.css$/, // find this snippet and add the lines below
+            use: [
+              require.resolve('style-loader'),
+              {
+                loader: require.resolve('css-loader'),
+                options: {
+                  importLoaders: 1,
+                  modules: true,    // add this line
+                  localIdentName: '[name]__[local]__[hash:base64:5]' // add this line
+                }
+
+step 4> in the following file add the code line config->webpack.config.prod.js
+      
+       test: /\.css$/,
+            loader: ExtractTextPlugin.extract(
+              Object.assign(
+                {
+                  fallback: {
+                    loader: require.resolve('style-loader'),
+                    options: {
+                      hmr: false
+                    }
+                  },
+                  use: [
+                    {
+                      loader: require.resolve('css-loader'),
+                      options: {
+                        importLoaders: 1,
+                        minimize: true,
+                        sourceMap: shouldUseSourceMap,
+                        modules: true,
+                        localIdentName: '[name]__[local]__[hash:base64:5]'
+                      }
+                    }
+  
+
+step 5> save. done!
+
+
+
+// using firestore some version issues solution, use npm i --save react-redux-firebase@next to get v3
+
++ import { ReactReduxFirebaseProvider } from 'react-redux-firebase'
++ import { createFirestoreInstance } from 'redux-firestore'
+- import { reactReduxFirebase } from 'react-redux-firebase' // removed
+- import { reduxFirestore } from 'redux-firestore'          // removed
+
+const store = createStore(
+  rootReducer,
+  initialState,
+  compose(
+-    reactReduxFirebase(firebase, rrfConfig), // removed
+-    reduxFirestore(firebase)
+    //  applyMiddleware(...middleware)       // removed
+  )
+)
+
++ const rrfProps = {
++   firebase,
++   config: rrfConfig,
++   dispatch: store.dispatch,
++   createFirestoreInstance // <- needed if using firestore
++ }
+const App = () => (
+  <Provider store={store}>
++   <ReactReduxFirebaseProvider {...rrfProps}>
+      <Todos />
++   </ReactReduxFirebaseProvider>
+  </Provider>
+);
+
+
+
+
+
+
+

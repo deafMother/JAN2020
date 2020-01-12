@@ -1,0 +1,51 @@
+// the main branch is called master we  can create branches an work and commit to those branches and it 
+// wont get updated to the main branch until we run the merge the branch to master
+
+git init // in a folder  to initialize git in that folder 
+git add filename.extn // to add file to staging area
+git add . // to add all files to staging area
+git status // to get list of files being taracked
+git rm --cached filename.extn // to remove that file from git tracking
+
+
+git commit // to commit changes
+
+/*to apply changes to any file into git staging area follow steps*/
+git status // to get list pf modified files
+git add . // to add all file
+git commit -m 'any comment' // to commit changes
+ 
+// 
+git commit -m 'any comment' // to commit changes and skip the editor 
+
+touch .gitignore // these file will contain list of files that we want to ignore from being tp the staging area
+
+
+
+--BRANCHING ----
+/*to create a branch*/
+
+git branch anyBranchName // then move to this branch by running
+git checkout anyBranchName 
+// now if modify any file or make new files it will not reflect in the master branch
+
+git merge anyBranchName // this command execute in master branch to merge anyBranch to master Branch
+
+/*to link to git hub*/
+git remote add origin https://github.com/deafMother/firstRepo.git   // adds this remote repository, first create the repo in git hub
+git push -u origin master // to push directory to git hub repository, remember to make readme.md in local repo else have to make pull req from remote repo git push
+
+/*to add new files to the gi hub repo-> after the new files
+have been commited in the local repo run the command*/
+git push //enjoy
+
+
+/* Cloning */
+ to clone from any remote repository 
+git clone url-of-that-remote-repos <optional: folder-name>;
+ // next change the remote repo to your choice
+git remote remove origin; // the previous remote origin will be removed now e can add an origin of our own remote repo
+git remote add origin https://github.com/deafMother/myRepo.git  
+git push -u origin master
+git push // remember to run npm install to download all the required dependencies
+

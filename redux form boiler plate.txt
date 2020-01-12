@@ -1,0 +1,47 @@
+import React from 'react';
+import { Field, reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
+import { LoginIn } from '../../../../actions/index';  // inculde your action createor if required
+
+class SignIn extends React.Component {
+
+    renderError = ({ touched, error }) => {
+	// render errors here        
+    }
+
+    renderInput = ({input, name, label, meta}) => {
+	// render every input here        
+    }
+
+    renderForm = () => {
+        return (
+		// add the form and Fields here            
+
+
+        )
+
+   } 
+
+
+  render() {
+      return <div>{this.renderForm()}</div>;
+  }
+}
+
+
+
+const validate = (formValuse) => {
+    const error = {};
+    // check error here
+
+    return error;
+}
+
+const myComp = reduxForm({
+    form: 'SigninForm',
+    validate
+})(SignIn);
+
+export default connect(null, {
+    LoginIn    
+})(myComp);

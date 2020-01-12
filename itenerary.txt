@@ -1,0 +1,33 @@
+Front End Journey.
+______________________________________
+
+HTML,
+CSS,
+JS,
+JQuery, // later(non priority)
+Using Tail-wind/Bootstrap/Bulma,//later
+Sass, // (high priority)
+Git/GitHub,
+Redux Saga,(high priority) 
+Websockets(high priority)
+Installation using npm,
+
+(front end framework **must**)/ React(MERN stack course) // ongoing(by nov 2019)
+Nuxt.js(server side)
+________________________________________
+need to learn to know back-end as well
+________________________________________
+Node.js(**must**), // (from dev to deployment - course) (ongoing by dec 2019) 
+Express (Node.js framework) (learn along with node)
+>routing, mongoose, rendering 
+
+SQL/MongoDB (**must**)/Firebase (optional along with node)
+> Mongo: aggregation(pipelining etc)
+ 
+Dev Ops and Deploymemnt:heroku/Docker & Kubernetz(later)
+
+
+----------------------------------------
+
+2020 PYTHON!
+

@@ -1,0 +1,98 @@
+
+
+> in JS strings are immutables .ie., name = "Sam", n[0] = "P" is not allowed.
+> the arrow function gets  the 'this' keyword from the parent where it is defined 
+> closures in javasctipt means that a function has acces to any variables that is within the scope in which it is defined in.
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+SETTING AND RETRIEVING DATA-ID 
+<div id='strawberry-plant' data-fruit='12'></div>
+
+<script>
+// 'Getting' data-attributes using getAttribute
+var plant = document.getElementById('strawberry-plant');
+var fruitCount = plant.getAttribute('data-fruit'); // fruitCount = '12'
+
+// 'Setting' data-attributes using setAttribute
+plant.setAttribute('data-fruit','7'); // Pesky birds
+</script>
+
+
+
+
+		OR
+
+<div id="my-div" data-info="some info here" data-other-info="more info here">My Awesome Div</div>
+var myDiv = document.querySelector('#my-div');
+myDiv.dataset.info // "some info here"
+myDiv.dataset.otherInfo // "more info here"
+
+///////////////
+
+
+/////////////////
+
+in JSON the keys have to be string and the values can be string but it is not mandatory
+////////////////
+{
+        // if we have projects then do the map thing else dont do the map thing, we nca use this technique with map
+        projects && projects.map(project => {
+          return <ProjectSummary project={project} />;
+       })
+}  
+
+//////////////////////////
+the issues that an ai has to deal with, is a task and which available object can be used to achieve that task and also what task/functions the available objects can achieve(i.e its use)
+/////////////////////////
+lightbox, venobox, owlcarousel, isotope, aoc, wow, animate, jquery, scroll reveal
+////////////////////////
+what is functional and procedural programming
+////////////////////////
+//
+//
+//
+// dects window scroll
+window.addEventListener('scroll', evt => {
+  //  console.log(window.pageYOffset); // scroll offset from top
+  // console.log(text.offsetTop); // offest of parent of text from top
+  scrollOffset = window.pageYOffset;
+  let viewPortWidth = window.innerWidth;
+  let viewPortHeight = window.innerHeight; // gives the view port height
+  // console.log(`${viewPortHeight}, width = ${viewPortWidth}`);
+  // this.console.log(viewPortHeight);
+  // this.console.log(scrollOffset);
+  if (scrollOffset > 100) {
+    console.log('scrolled');
+  }
+});
+//
+//
+//
+
+>Object.assign(dest, src1, ..., srcN) – copies properties from src1..N into dest
+>Array.from operates on both array-likes and iterables.
+>The spread operator operates only on iterables.
+>In JavaScript, functions are objects.We can treat a function as an object, store properties in it, but that has no effect on its execution. Variables are not function properties and vice versa. These are just parallel worlds.
+>Global object:In a browser it is named window, for Node.js it is global
+>Recently, globalThis was added to the language, as a standardized name for a global object
+>In JavaScript, objects have a special hidden property [[Prototype]] (as named in the specification), that is either null or references another object. That object is called “a prototype
+>Polyfilling is a term for making a substitute for a method that exists in the JavaScript specification, but is not yet supported by a particular JavaScript engine.
+
+>Never!! store JWT in localStorage instead store in HTTP only cookies, XSS Attacks, DOS Attacks, NOSQL Query Injection
+>animation: name duration timing-function delay iteration-count direction fill-mode;
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ res.cookie('jwt', token, {
+    expires: new Date(
+      Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
+    ),
+    secure: true,
+    httpOnly: true
+  });
+
+<><><><><>><><><><><><><><>><><><><>><><><><>><><><>
+ease - Specifies an animation with a slow start, then fast, then end slowly (this is default)
+linear - Specifies an animation with the same speed from start to end
+ease-in - Specifies an animation with a slow start
+ease-out - Specifies an animation with a slow end
+ease-in-out - Specifies an animation with a slow start and end
